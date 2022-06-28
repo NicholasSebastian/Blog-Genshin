@@ -1,0 +1,57 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  width: 800px;
+  max-width: 90%;
+}
+
+header:first-of-type > div {
+  background-image: url('/banner.jpg');
+  background-position: center;
+  color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+}
+
+header:first-of-type > div > h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  header:first-of-type > nav {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+  
+    /* TODO: Position sticky is not working. */
+    position: sticky;
+    top: 0;
+  }
+  
+  header:first-of-type > nav > * {
+    color: #fff;
+    margin: 0 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+  
+    padding-top: 18px;
+    padding-bottom: 10px;
+    border-bottom: 6px solid transparent;
+    transition: border 300ms;
+  }
+  
+  header:first-of-type > nav > *:hover {
+    border-color: #69e0ff;
+  }
+}
