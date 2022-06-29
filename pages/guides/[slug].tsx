@@ -8,11 +8,11 @@ import { slugify } from '../../utils/slug';
 
 const Post: NextPage<IPostProps> = ({ post, markdown }) => {
   return (
-    <main>
-      <h1>{post.name}</h1>
-      <Image src={post.cover} alt="Cover" layout='responsive' width={640} height={360} />
-      <div>{dayjs(post.created_on).format('MMMM D, YYYY')}</div>
+    <main className='post'>
       <article>
+        <h1>{post.name}</h1>
+        <Image src={post.cover} alt="Cover" layout='responsive' width={640} height={360} />
+        <div>{dayjs(post.created_on).format('MMMM D, YYYY')}</div>
         <ReactMarkdown>{markdown}</ReactMarkdown>
       </article>
     </main>

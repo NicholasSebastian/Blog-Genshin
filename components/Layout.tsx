@@ -1,50 +1,51 @@
 import { FC, PropsWithChildren } from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
+import styles from '../styles/Layout.module.css';
+import SEO, { IMeta } from './Meta';
+import NavigationBar from './NavBar';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
 
 // Inspired by: https://www.geekysweetie.com/
 
-const SEO: FC<ILayoutProps> = ({ title, description }) => {
-  const _title = title ?? "Blog";
-  return (
-    <Head>
-      <title>{_title}</title>
-      <meta name='og:title' title='og:title' content={_title} />
-      <meta name='description' title='description' content={description} />
-      <meta name='og:description' title='og:description' content={description} />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-  );
-};
-
-const Layout: FC<PropsWithChildren<ILayoutProps>> = (props) => {
+const Layout: FC<PropsWithChildren<IMeta>> = (props) => {
   const { children, ...details } = props;
   return (
     <>
       <SEO {...details} />
-      <header>
-        <div>
-          <Link href='/'><h1>Nakiri</h1></Link>
-          <span>The Best Genshin Impact Guides and more</span>
-        </div>
-        <nav>
-          <Link href='/'>Home</Link>
-          <Link href='/guides'>Guides</Link>
-          <Link href='/videos'>Videos</Link>
-          <Link href='/tools'>Tools</Link>
-          <Link href='/about'>About</Link>
-          <Link href='/contact'>Contact</Link>
-        </nav>
+      <header className={styles.header}>
+        <Link href='/'><h1>Nakiri</h1></Link>
+        <span>The Best Genshin Impact Guides and more</span>
       </header>
+      <NavigationBar links={[
+        { name: 'Home', path: '/' },
+        { name: 'Guides', path: '/guides' },
+        { name: 'Reference', links: [
+          { name: 'Characters', path: '/characters' },
+          { name: 'Weapons', path: '/weapons' },
+          { name: 'Artifacts', path: '/artifacts' }
+        ]},
+        { name: 'Videos', path: '/videos' },
+        { name: 'Tools', path: '/tools', links: [
+          { name: 'Damage Calculator', path: '/damage-calculator' },
+          { name: 'Wish Simulator', path: '/wish-simulator' },
+          { name: 'Artifact Simulator', path: '/artifact-simulator' },
+          { name: 'Cost Calculator', path: '/cost-calculator' },
+          { name: 'Artifact Rater', path: '/artifact-rater' },
+          { name: 'Spiral Abyss', path: '/spiral-abyss' },
+          { name: 'Card Generator', path: '/card-generator' }
+        ]},
+        { name: 'About', path: '/about' }
+      ]} />
       {children}
-      <footer></footer>
+      <footer className={styles.footer}>
+        <div>
+          <a href=''><FaInstagram /></a>
+          <a href=''><FaYoutube /></a>
+        </div>
+        <div>Copyright © Nicholas Sebastian. All Rights Reserved.</div>
+      </footer>
     </>
   );
 }
 
 export default Layout;
-
-interface ILayoutProps {
-  title?: string
-  description?: string
-}

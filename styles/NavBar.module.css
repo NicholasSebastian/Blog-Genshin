@@ -1,0 +1,62 @@
+/* TODO: Mobile styling */
+
+@media only screen and (min-width: 768px) {
+  .container {
+    background-color: #111e;
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .container > a,
+  .container > span {
+    margin: 0 30px;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    border-bottom: 6px solid transparent;
+    transition: border 300ms;
+  }
+
+  .container > a,
+  .container > span,
+  .container > span > a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .container > a:hover,
+  .container > span:hover {
+    cursor: pointer;
+    border-color: #69e0ff;
+  }
+
+  .container > span > div {
+    display: none;
+    background-color: #2c2c2c;
+    flex-direction: column;
+    padding: 16px 12px;
+    position: absolute;
+    top: 50px;
+  }
+
+  .container > span:hover > div {
+    display: flex;
+  }
+
+  .container > span > div > a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .container > span > div > a:not(:first-child) {
+    margin-top: 10px;
+  }
+}
