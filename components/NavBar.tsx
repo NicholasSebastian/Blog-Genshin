@@ -9,7 +9,7 @@ const NavigationBar: FC<INavProps> = ({ links }) => {
     <nav className={styles.container}>
       {links.map((link, i) => {
         return isNested(link) ? (
-          <span>
+          <span key={i}>
             {link.path ? <Link href={link.path}>{link.name}</Link> : link.name}
             <div>
               {link.links.map((nested_link, j) => (

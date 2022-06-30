@@ -24,8 +24,7 @@
   .container > span,
   .container > span > a {
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -51,8 +50,7 @@
 
   .container > span > div > a {
     color: #fff;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 12px;
     text-decoration: none;
   }
 

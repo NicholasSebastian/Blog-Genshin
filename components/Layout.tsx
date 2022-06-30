@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '../styles/Layout.module.css';
 import SEO, { IMeta } from './Meta';
 import NavigationBar from './NavBar';
-import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 // Inspired by: https://www.geekysweetie.com/
 
@@ -39,6 +39,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = (props) => {
       {children}
       <footer className={styles.footer}>
         <div>
+          <a href=''><FaTwitter /></a>
           <a href=''><FaInstagram /></a>
           <a href=''><FaYoutube /></a>
         </div>

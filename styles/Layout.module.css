@@ -29,12 +29,17 @@
   cursor: pointer;
 }
 
+.header > span {
+  font-size: 14px;
+}
+
 .footer {
   background-color: #111;
 }
 
 .footer > div:nth-child(1) {
   width: 800px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 10px 0;
   font-size: 30px;
